@@ -5,7 +5,7 @@
     </head>
 <body>
 
-	<h2>My First JavaScript</h2>
+	<h2>My First JavaScript1</h2>
 
 	<button type="button">Start</button>&nbsp&nbsp
 	<p id="iDate"></p>
