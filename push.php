@@ -5,7 +5,7 @@
     </head>
 <body>
 
-	<h2>My First JavaScript1</h2>
+	<h2>My First JavaScript</h2>
 
 	<button type="button">Start</button>&nbsp&nbsp
 	<p id="iDate"></p>
@@ -36,7 +36,7 @@
 			alert('Start');
 			callPage();
 			//var myVar = setInterval(myTimer, 1000);
-			//setInterval(function () {callPage();}, 10000);			
+			setInterval(function () {callPage();}, 10000);			
 			//alert('End'); 
 		});
 	});
@@ -51,8 +51,8 @@
 			},
 			success: function(response) {
 				//Do Something
-				//var iDate = document.getElementById('iDate');
-				//iDate.insertAdjacentHTML('afterbegin', count+'. 'Date()+'<br />');
+				var iDate = document.getElementById('iDate');
+				iDate.insertAdjacentHTML('afterbegin', Date()+'<br />');
 				//document.getElementById('tDate').innerHTML = Date();
 			},
 			error: function(xhr) {
