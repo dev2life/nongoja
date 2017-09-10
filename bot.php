@@ -21,14 +21,14 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			//$url = 'http://democlaimpa.rvp.co.th/Services/line_reply.ashx?text='.urlencode($text);
 			//$text = file_get_contents($url);
-			if($text =='โอจา ขอไอดี') $text=$userId;
+			if($text =='โอจา ไอดี') $text=$userId;
 			else $text = '';
 
 			if($text != '')
 			{
 				$messages = [
 					'type' => 'text',
-					'text' => $text.$userId
+					'text' => $text
 				];
 
 				// Make a POST Request to Messaging API to reply to sender
