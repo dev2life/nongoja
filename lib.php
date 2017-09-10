@@ -17,7 +17,7 @@
 
     function Push(string $token) {
         $access_token = 'mApA9dA4vBkZddHCyLrQ6xkK4FOBQWii2hCpCp2TaH340/LB60kdCjlZFxoxZkAWRudTMqnXefQkEh8v1V92dAFNDbWovSt+vGDpYoUdIzVHmDJfL+XkVrTLDWug46RACDK4NU0UuLvAHav8PlC+ZQdB04t89/1O/w1cDnyilFU=ISSUE';
-
+        echo token . '****';
         // Get POST body content
         //$content = file_get_contents('php://input');
         // Parse JSON
