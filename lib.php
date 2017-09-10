@@ -14,7 +14,7 @@
         return;
     }
 
-
+    
     function Push() {
         $access_token = 'mApA9dA4vBkZddHCyLrQ6xkK4FOBQWii2hCpCp2TaH340/LB60kdCjlZFxoxZkAWRudTMqnXefQkEh8v1V92dAFNDbWovSt+vGDpYoUdIzVHmDJfL+XkVrTLDWug46RACDK4NU0UuLvAHav8PlC+ZQdB04t89/1O/w1cDnyilFU=ISSUE';
 
@@ -31,7 +31,6 @@
         // $jsonIterator = new RecursiveIteratorIterator(
         //     new RecursiveArrayIterator(json_decode($json, TRUE)),
         //     RecursiveIteratorIterator::SELF_FIRST);
-
         // foreach ($jsonIterator as $key => $val) {
         //     echo "$key => $val\n";
         //     // if(is_array($val)) {
@@ -42,14 +41,17 @@
         // }
         
         $json_a=json_decode($json,true);
-        echo $json_a["UserID"];
-        echo $json_a["Text"];
+        echo $json_a["userID"];
+        echo $json_a["text"];
         
-        return;
+        $to = $json_a["userID"];
+        $text = $json_a["text"];
+
+        if($to == '') return;
         if($text == '') return;
 
-
-        $to_id = ['to' => 'Ucd7a7d735cb377cbf5e2f65ed29d44a7'];
+        //-----------------------------------------------------------------
+        //$to_id = ['to' => 'Ucd7a7d735cb377cbf5e2f65ed29d44a7'];
         $messages = [
             'type' => 'text',
             'text' => $text
@@ -58,7 +60,7 @@
         // Make a POST Request to Messaging API to reply to sender
         $url = 'https://api.line.me/v2/bot/message/push';
         $data = [
-            'to' => 'Ucd7a7d735cb377cbf5e2f65ed29d44a7',
+            'to' => $to,
             'messages' => [$messages],
         ];
 
@@ -74,7 +76,7 @@
         curl_close($ch);
         echo $result . "\r\n";
         echo "OK";
-
+        //-----------------------------------------------------------------
     }
    
 ?>
