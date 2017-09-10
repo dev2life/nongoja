@@ -28,7 +28,23 @@
         $url = 'http://163.44.197.45/OJAmeeting/LineAPI/Push';
         $text = file_get_contents($url);
 
+        $jsonIterator = new RecursiveIteratorIterator(
+            new RecursiveArrayIterator(json_decode($json, TRUE)),
+            RecursiveIteratorIterator::SELF_FIRST);
+
+            foreach ($jsonIterator as $key => $val) {
+                echo "$key => $val\n";
+                // if(is_array($val)) {
+                //     echo "$key:\n";
+                // } else {
+                //     echo "$key => $val\n";
+                // }
+            }
+        
+        
+        return;
         if($text == '') return;
+
 
         $to_id = ['to' => 'Ucd7a7d735cb377cbf5e2f65ed29d44a7'];
         $messages = [
@@ -55,6 +71,7 @@
         curl_close($ch);
         echo $result . "\r\n";
         echo "OK";
+
     }
    
 ?>
