@@ -2,11 +2,8 @@
 
 <?php 
 
-    $get_token = $_GET['token'];
-    $get_action = $_GET['action'];
-    
-    echo 'token-> '.$get_token.'<br />';
-    echo 'action-> '.$get_action.'<br />';
+    echo 'token-> '.$_GET['token'];
+    echo 'action-> '. $_GET['action'];
 
     if($_GET['token']=='9999'){
         if($_GET['action']=='push')echo Push($get_token);
@@ -14,46 +11,25 @@
         return;
     }
 
-
     function Push() {
-        $access_token = 'mApA9dA4vBkZddHCyLrQ6xkK4FOBQWii2hCpCp2TaH340/LB60kdCjlZFxoxZkAWRudTMqnXefQkEh8v1V92dAFNDbWovSt+vGDpYoUdIzVHmDJfL+XkVrTLDWug46RACDK4NU0UuLvAHav8PlC+ZQdB04t89/1O/w1cDnyilFU=ISSUE';
-        // Get POST body content
-        //$content = file_get_contents('php://input');
-        // Parse JSON
-        //$events = json_decode($content, true);
-
         // Build message to reply back
         //$url = 'http://democlaimpa.rvp.co.th/Services/line_reply.ashx?text='.urlencode('ดัม');
         $url = 'http://163.44.197.45/OJAmeeting/LineAPI/Push?token='.$_GET['token'];
-        echo $url.'<br />';
+        //echo $url.'<br />';
         $json = file_get_contents($url);
 
-        // $jsonIterator = new RecursiveIteratorIterator(
-        //     new RecursiveArrayIterator(json_decode($json, TRUE)),
-        //     RecursiveIteratorIterator::SELF_FIRST);
-        // foreach ($jsonIterator as $key => $val) {
-        //     echo "$key => $val\n";
-        //     // if(is_array($val)) {
-        //     //     echo "$key:\n";
-        //     // } else {
-        //     //     echo "$key => $val\n";
-        //     // }             
-        // }
-        
         $json_a=json_decode($json,true);
         echo $json_a["userID"].'<br />';
         echo $json_a["text"].'<br />';
         
+        $access_token = 'mApA9dA4vBkZddHCyLrQ6xkK4FOBQWii2hCpCp2TaH340/LB60kdCjlZFxoxZkAWRudTMqnXefQkEh8v1V92dAFNDbWovSt+vGDpYoUdIzVHmDJfL+XkVrTLDWug46RACDK4NU0UuLvAHav8PlC+ZQdB04t89/1O/w1cDnyilFU=ISSUE';        
         $to = $json_a["userID"];
         $text = $json_a["text"];
 
-        if($to == '') return;
-        if($text == '') return;
-
+        if($to == '') return; if($text == '') return;
         //-----------------------------------------------------------------
-        //$to_id = ['to' => 'Ucd7a7d735cb377cbf5e2f65ed29d44a7'];
         $messages = [
-            'type' => 'text',
+            'type' => 'text', //Ucd7a7d735cb377cbf5e2f65ed29d44a7
             'text' => $text
         ];
 
