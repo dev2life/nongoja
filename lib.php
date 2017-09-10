@@ -25,7 +25,7 @@
         // Build message to reply back
         //$url = 'http://democlaimpa.rvp.co.th/Services/line_reply.ashx?text='.urlencode('ดัม');
         $url = 'http://163.44.197.45/OJAmeeting/LineAPI/Push?token='.$_GET['token'];
-        echo $url;
+        echo $url.'<br />';
         $json = file_get_contents($url);
 
         // $jsonIterator = new RecursiveIteratorIterator(
