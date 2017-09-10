@@ -20,6 +20,7 @@ if (!is_null($events['events'])) {
 			//try{$groupID =  $event["source"]["groupId"];}finally{$groupID='';}
 
 			$userId = $event["source"]["userId"];
+			$groupID =  $event["source"]["groupId"];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -28,7 +29,7 @@ if (!is_null($events['events'])) {
 			//$text = file_get_contents($url);
 			//if($text =='โอจา อินโฟ') $text=$event['source'];
 			if($text =='โอจา ไอดี') $text=$userId;
-			//if($text =='โอจา ไอดีห้อง') $text=$groupID;
+			if($text =='โอจา ไอดีห้อง') $text=$groupID;
 			else $text = '';
 
 			if($text != '')
