@@ -53,7 +53,6 @@
 				//Do Something
 				var iDate = document.getElementById('iDate');
 				iDate.insertAdjacentHTML('afterbegin', Date()+'<br />');
-				//document.getElementById('tDate').innerHTML = Date();
 			},
 			error: function(xhr) {
 				//Do Something to handle error
