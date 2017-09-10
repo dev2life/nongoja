@@ -2,14 +2,14 @@
 
 <?php 
 
-    $token = $_GET['token'];
-    $action = $_GET['action'];
+    $get_token = $_GET['token'];
+    $get_action = $_GET['action'];
     
-    echo $token.'<br />';
-    echo $action.'<br />';
+    echo $get_token.'<br />';
+    echo $get_action.'<br />';
 
-    if($token=='9999'){
-        if($action=='push')echo Push($token);
+    if($get_token=='9999'){
+        if($get_action=='push')echo Push($get_token);
     }else{
         return;
     }
