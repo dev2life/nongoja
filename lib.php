@@ -2,8 +2,8 @@
 
 <?php 
 
-    echo 'token-> '.$_GET['token'];
-    echo 'action-> '. $_GET['action'];
+    echo 'token-> '.$_GET['token'].'<br>';
+    echo 'action-> '. $_GET['action'].'<br>';
 
     if($_GET['token']=='9999'){
         if($_GET['action']=='push')echo Push($get_token);
@@ -15,12 +15,12 @@
         // Build message to reply back
         //$url = 'http://democlaimpa.rvp.co.th/Services/line_reply.ashx?text='.urlencode('ดัม');
         $url = 'http://163.44.197.45/OJAmeeting/LineAPI/Push?token='.$_GET['token'];
-        //echo $url.'<br />';
+        echo $url.'<br>';
         $json = file_get_contents($url);
 
         $json_a=json_decode($json,true);
-        echo $json_a["userID"].'<br />';
-        echo $json_a["text"].'<br />';
+        echo $json_a["userID"].'<br>';
+        echo $json_a["text"].'<br>';
         
         $access_token = 'mApA9dA4vBkZddHCyLrQ6xkK4FOBQWii2hCpCp2TaH340/LB60kdCjlZFxoxZkAWRudTMqnXefQkEh8v1V92dAFNDbWovSt+vGDpYoUdIzVHmDJfL+XkVrTLDWug46RACDK4NU0UuLvAHav8PlC+ZQdB04t89/1O/w1cDnyilFU=ISSUE';        
         $to = $json_a["userID"];
