@@ -15,18 +15,18 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			$id = $event['message']['id'];
 
-			$type = $event['source']['type'];
+			//$type = $event['source']['type'];
 			try{$userId = $event["source"]["userId"];}finally{$userId='';}
-			try{$groupID =  $event["source"]["groupId"];}finally{$groupID='';}
+			//try{$groupID =  $event["source"]["groupId"];}finally{$groupID='';}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
 			//$url = 'http://democlaimpa.rvp.co.th/Services/line_reply.ashx?text='.urlencode($text);
 			//$text = file_get_contents($url);
-			if($text =='โอจา อินโฟ') $text=$event['source'];
+			//if($text =='โอจา อินโฟ') $text=$event['source'];
 			if($text =='โอจา ไอดี') $text=$userId;
-			if($text =='โอจา ไอดีห้อง') $text=$userId;
+			//if($text =='โอจา ไอดีห้อง') $text=$groupID;
 			//else $text = '';
 
 			if($text != '')
