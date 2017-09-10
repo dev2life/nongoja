@@ -16,8 +16,8 @@ if (!is_null($events['events'])) {
 			$id = $event['message']['id'];
 
 			$type = $event['source']['type'];
-			$userId = $event['source']['userId'];
-			$groupID =  $event['source']['groupId'];
+			try{$userId = $event["source"]["userId"];}finally{$userId='';}
+			try{$groupID =  $event["source"]["groupId"];}finally{$groupID='';}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 			if($text =='โอจา อินโฟ') $text=$event['source'];
 			if($text =='โอจา ไอดี') $text=$userId;
 			if($text =='โอจา ไอดีห้อง') $text=$userId;
-			else $text = '';
+			//else $text = '';
 
 			if($text != '')
 			{
