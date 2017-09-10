@@ -14,7 +14,7 @@
         return;
     }
 
-    
+
     function Push() {
         $access_token = 'mApA9dA4vBkZddHCyLrQ6xkK4FOBQWii2hCpCp2TaH340/LB60kdCjlZFxoxZkAWRudTMqnXefQkEh8v1V92dAFNDbWovSt+vGDpYoUdIzVHmDJfL+XkVrTLDWug46RACDK4NU0UuLvAHav8PlC+ZQdB04t89/1O/w1cDnyilFU=ISSUE';
 
@@ -25,7 +25,7 @@
 
         // Build message to reply back
         //$url = 'http://democlaimpa.rvp.co.th/Services/line_reply.ashx?text='.urlencode('ดัม');
-        $url = 'http://163.44.197.45/OJAmeeting/LineAPI/Push';
+        $url = 'http://163.44.197.45/OJAmeeting/LineAPI/Push?token='.urlencode($token);
         $json = file_get_contents($url);
 
         // $jsonIterator = new RecursiveIteratorIterator(
