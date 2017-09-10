@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			//try{$groupID =  $event["source"]["groupId"];}finally{$groupID='';}
 
 			$userId = $event["source"]["userId"];
-			$groupID =  $event["source"]["groupId"];
+			try{$groupID =  $event["source"]["groupId"];}catch(Exception $e){$groupID = "";}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
