@@ -5,8 +5,8 @@
     $get_token = $_GET['token'];
     $get_action = $_GET['action'];
     
-    echo $get_token.'<br />';
-    echo $get_action.'<br />';
+    echo 'token-> '.$get_token.'<br />';
+    echo 'action-> '.$get_action.'<br />';
 
     if($get_token=='9999'){
         if($get_action=='push')echo Push($get_token);
