@@ -42,8 +42,8 @@
         // }
         
         $json_a=json_decode($json,true);
-        echo $json_a["userid"];
-        echo $json_a["text"];
+        echo $json_a["UserID"];
+        echo $json_a["Text"];
         
         return;
         if($text == '') return;
