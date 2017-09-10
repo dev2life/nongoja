@@ -15,6 +15,7 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			$id = $event['message']['id'];
 			$userId = $event['source']['userId'];
+			$groupID =  $event['source']['groupId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -22,6 +23,7 @@ if (!is_null($events['events'])) {
 			//$url = 'http://democlaimpa.rvp.co.th/Services/line_reply.ashx?text='.urlencode($text);
 			//$text = file_get_contents($url);
 			if($text =='โอจา ไอดี') $text=$userId;
+			if($text =='โอจา ไอดีห้อง') $text=$userId;
 			else $text = '';
 
 			if($text != '')
