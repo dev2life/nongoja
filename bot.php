@@ -21,9 +21,9 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			//$url = 'http://democlaimpa.rvp.co.th/Services/line_reply.ashx?text='.urlencode($text);
 			//$text = file_get_contents($url);
-			if($text =='โอจา ขอไอดี') $textช$userId
+			if($text =='โอจา ขอไอดี') $text=$userId;
 			else $text = '';
-			
+
 			if($text != '')
 			{
 				$messages = [
