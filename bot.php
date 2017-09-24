@@ -31,6 +31,16 @@ if (!is_null($events['events'])) {
 			if($text =='โอจา อินโฟ') $text=$event['source'];
 			else if($text =='โอจา ไอดี') $text=$userId;
 			else if($text =='โอจา ไอดีห้อง') $text=$groupID;
+			//###################################################################################
+			// Group Register
+			else if(substr($text,0,14) =='โอจา ลงทะเบียน') {				
+				$url = 'http://163.44.197.45/OJAmeeting/LineAPI/GroupRegister';
+				$url .= '?token=9999';
+				$url .= '&lineGroupID='.$groupID;
+				$url .= '&lineMeetingID='.substr($text,-8);
+				$text = file_get_contents($url);
+			}
+			//###################################################################################
 			else $text = '';
 
 			if($text != '')
