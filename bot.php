@@ -38,7 +38,8 @@ if (!is_null($events['events'])) {
 				$url .= '?token=9999';
 				$url .= '&lineGroupID='.$groupID;
 				$url .= '&lineMeetingID='.substr($text,-8);
-				$text = file_get_contents($url);
+				//$text = file_get_contents($url);
+				$text = $url;
 			}
 			//###################################################################################
 			else $text = '';
