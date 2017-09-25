@@ -34,11 +34,12 @@ if (!is_null($events['events'])) {
 			//###################################################################################
 			// Group Register
 			//else if(substr($text,0,40) =='โอจา ลงทะเบียน') {		
-			else if(strtolower(substr($text,0,8)) =='register') {
+			else if(strtolower(substr($text,0,5)) =='regis') {
 				$url = 'http://163.44.197.45/OJAmeeting/LineAPI/GroupRegister';
 				$url .= '?token=9999';
 				$url .= '&lineGroupID='.$groupID;
-				$url .= '&lineMeetingID='.substr($text,-8);
+				//$url .= '&lineMeetingID='.substr($text,-8);
+				$url .= '&lineMeetingID='.$text;
 				$text = file_get_contents($url);
 				//$text = $url;
 			}
