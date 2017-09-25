@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 			//###################################################################################
 			// Group Register
 			//else if(substr($text,0,40) =='โอจา ลงทะเบียน') {		
-			else if(strtolower(substr($text,0,5)) =='regis') {
+			else if(substr($text,0,5) =='REGIS') {
 				$url = 'http://163.44.197.45/OJAmeeting/LineAPI/GroupRegister';
 				$url .= '?token=9999';
 				$url .= '&lineGroupID='.$groupID;
